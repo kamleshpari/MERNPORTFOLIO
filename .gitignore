@@ -1,4 +1,4 @@
-backend/node_modules
+bserver/node_modules
 portfolio/node_modules
 dashboard/node_modules
-backend/config
+bserver/config
