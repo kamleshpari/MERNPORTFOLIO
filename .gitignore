@@ -1,4 +1,4 @@
 bserver/node_modules
 portfolio-frontend/node_modules
 dashboard/node_modules
-bserver/config
+bserver/config/config.env
