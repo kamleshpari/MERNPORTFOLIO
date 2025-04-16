@@ -42,7 +42,7 @@ const ProjectView = () => {
         });
     };
     getProject();
-  },[id]);
+  }, [id]);
 
   const descriptionList = description.split(". ");
   const technologiesList = technologies.split(", ");
@@ -87,7 +87,7 @@ const ProjectView = () => {
                 <div className="w-full sm:col-span-4">
                   <p className="text-2xl mb-2">Technologies:</p>
                   <ul className="list-disc">
-                    {technologiesList.map((item,index) => (
+                    {technologiesList.map((item, index) => (
                       <li key={index}>{item}</li>
                     ))}
                   </ul>

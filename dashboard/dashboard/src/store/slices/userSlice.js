@@ -151,15 +151,15 @@ export const logout = () => async (dispatch) => {
 };
 
 export const updatePassword =
-  (currentPassword,newPassword,confirmNewPassword) => async (dispatch) => {
+  (currentPassword, newPassword, confirmNewPassword) => async (dispatch) => {
     dispatch(userSlice.actions.updatePasswordRequest());
     try {
-      const {data}=await axios.put(
+      const { data } = await axios.put(
         "http://localhost:4000/api/v1/user/update/password",
-        {currentPassword,newPassword,confirmNewPassword},
+        { currentPassword, newPassword, confirmNewPassword },
         {
-          withCredentials:true,
-          headers:{"Content-Type":"application/json"},
+          withCredentials: true,
+          headers: { "Content-Type": "application/json" },
         }
       );
       dispatch(userSlice.actions.updatePasswordSuccess(data.message));
@@ -171,25 +171,25 @@ export const updatePassword =
     }
   };
 
-  export const updateProfile = (data) => async (dispatch) => {
-    dispatch(userSlice.actions.updateProfileRequest());
-    try {
-      const response = await axios.put(
-        "http://localhost:4000/api/v1/user/update/me", // Corrected URL
-        data,
-        {
-          withCredentials: true,
-          headers: { "Content-Type": "multipart/form-data" },
-        }
-      );
-      dispatch(userSlice.actions.updateProfileSuccess(response.data.message));
-      dispatch(userSlice.actions.clearAllErrors());
-    } catch (error) {
-      dispatch(
-        userSlice.actions.updateProfileFailed(error.response.data.message)
-      );
-    }
-  };
+export const updateProfile = (data) => async (dispatch) => {
+  dispatch(userSlice.actions.updateProfileRequest());
+  try {
+    const response = await axios.put(
+      "http://localhost:4000/api/v1/user/update/me", // Corrected URL
+      data,
+      {
+        withCredentials: true,
+        headers: { "Content-Type": "multipart/form-data" },
+      }
+    );
+    dispatch(userSlice.actions.updateProfileSuccess(response.data.message));
+    dispatch(userSlice.actions.clearAllErrors());
+  } catch (error) {
+    dispatch(
+      userSlice.actions.updateProfileFailed(error.response.data.message)
+    );
+  }
+};
 export const resetProfile = () => (dispatch) => {
   dispatch(userSlice.actions.updateProfileResetAfterUpdate());
 };
