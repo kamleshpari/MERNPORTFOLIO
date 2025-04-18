@@ -74,7 +74,7 @@ export const getAllSoftwareApplications = () => async (dispatch) => {
   );
   try {
     const response = await axios.get(
-      "http://localhost:4000/api/v1/software/getall",
+      "https://mern-portfolio-backend-46a3.onrender.com/api/v1/software/getall",
       { withCredentials: true }
     );
     dispatch(
@@ -98,7 +98,7 @@ export const addNewSoftwareApplication = (data) => async (dispatch) => {
   );
   try {
     const response = await axios.post(
-      "http://localhost:4000/api/v1/software/add",
+      "https://mern-portfolio-backend-46a3.onrender.com/api/v1/software/add",
       data,
       {
         withCredentials: true,
@@ -126,7 +126,7 @@ export const deleteSoftwareApplication = (id) => async (dispatch) => {
   );
   try {
     const response = await axios.delete(
-      `http://localhost:4000/api/v1/software/delete/${id}`,
+      `https://mern-portfolio-backend-46a3.onrender.com/api/v1/software/delete/${id}`,
       {
         withCredentials: true,
       }
